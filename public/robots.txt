@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://money-tab-xi.vercel.app/sitemap.xml
+Sitemap: https://moneytab.startuprecipe.co.kr/sitemap.xml
