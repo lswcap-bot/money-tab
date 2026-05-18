@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Briefcase, Receipt, TrendingUp, BadgeCheck } from 'lucide-react';
+import AdSenseBanner from './components/AdSenseBanner.jsx';
 import SalaryCalculator    from './components/SalaryCalculator.jsx';
 import FourInsuranceCalc   from './components/FourInsuranceCalc.jsx';
 import SeveranceCalc       from './components/SeveranceCalc.jsx';
@@ -63,23 +64,31 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
 
-      {/* ── 헤더 ───────────────────────────────────────────── */}
-      <header className="no-print bg-white border-b border-slate-100 shadow-sm sticky top-0 z-40">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2.5 shrink-0">
-            <div className="w-8 h-8 rounded-xl bg-brand-800 flex items-center justify-center shadow-md">
-              <TrendingUp size={16} className="text-white" />
+      {/* ── 헤더 + 내비게이션 (sticky 묶음) ─────────────────── */}
+      <div className="no-print sticky top-0 z-40 bg-white shadow-sm">
+
+        {/* 헤더: 로고 + 광고 */}
+        <header className="border-b border-slate-100">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 py-2 flex items-center gap-4 min-h-[56px]">
+            {/* 로고 */}
+            <div className="flex items-center gap-2.5 shrink-0">
+              <div className="w-8 h-8 rounded-xl bg-brand-800 flex items-center justify-center shadow-md">
+                <TrendingUp size={16} className="text-white" />
+              </div>
+              <div className="leading-tight">
+                <span className="text-brand-800 font-extrabold text-lg tracking-tight">Money</span>
+                <span className="text-slate-700 font-extrabold text-lg tracking-tight"> Tab</span>
+              </div>
             </div>
-            <div className="leading-tight">
-              <span className="text-brand-800 font-extrabold text-lg tracking-tight">Money</span>
-              <span className="text-slate-700 font-extrabold text-lg tracking-tight"> Tab</span>
+            {/* 광고 배너 — 로고 오른쪽 */}
+            <div className="flex-1 min-w-0">
+              <AdSenseBanner slot="2073075707" />
             </div>
           </div>
-        </div>
-      </header>
+        </header>
 
-      {/* ── 2단계 내비게이션 ───────────────────────────────── */}
-      <nav className="no-print bg-white border-b border-slate-100 shadow-sm sticky top-14 z-30">
+        {/* 내비게이션 */}
+        <nav className="bg-white border-b border-slate-100">
         <div className="max-w-3xl mx-auto">
 
           {/* 1단계: 그룹 선택 + 배지 */}
@@ -144,7 +153,8 @@ export default function App() {
             })}
           </div>
         </div>
-      </nav>
+        </nav>
+      </div>{/* /sticky wrapper */}
 
       {/* ── 콘텐츠 ─────────────────────────────────────────── */}
       <main className="flex-1 max-w-3xl w-full mx-auto px-4 sm:px-6 py-6">
