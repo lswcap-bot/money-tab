@@ -69,7 +69,7 @@ export default function App() {
 
         {/* 헤더: 로고 + 광고 */}
         <header className="border-b border-slate-100">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 py-2 flex items-center gap-4 min-h-[56px]">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 flex items-center gap-4 h-[90px]">
             {/* 로고 */}
             <div className="flex items-center gap-2.5 shrink-0">
               <div className="w-8 h-8 rounded-xl bg-brand-800 flex items-center justify-center shadow-md">
@@ -80,9 +80,9 @@ export default function App() {
                 <span className="text-slate-700 font-extrabold text-lg tracking-tight"> Tab</span>
               </div>
             </div>
-            {/* 광고 배너 — 로고 오른쪽 */}
-            <div className="flex-1 min-w-0">
-              <AdSenseBanner slot="2073075707" />
+            {/* 광고 배너 — 로고 오른쪽, 높이 90px 고정 */}
+            <div className="flex-1 min-w-0 h-[90px] overflow-hidden">
+              <AdSenseBanner slot="2073075707" format="horizontal" responsive="false" />
             </div>
           </div>
         </header>
