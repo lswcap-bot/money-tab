@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://money-tab-xi.vercel.app/sitemap.xml
